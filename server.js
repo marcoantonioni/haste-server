@@ -16,6 +16,8 @@ const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
 config.port = process.env.PORT || config.port || 7777;
 config.host = process.env.HOST || config.host || 'localhost';
 
+console.log("Starting hastebin (marco)");
+
 // Set up the logger
 if (config.logging) {
   try {
