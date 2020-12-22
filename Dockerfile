@@ -10,17 +10,24 @@ MAINTAINER Marco Antonioni <antonioni.marco@gmail.com>
 
 ENV PB_FOLDER=/opt/hastebin
 WORKDIR ${PB_FOLDER}
+
+# copia sorgenti e configurazioni
 ADD . ${PB_FOLDER}/
+
+# installa dipendenze
 RUN npm install
 
+# ownership utnte non-root
 RUN chown -R 1001:0 /opt/hastebin && chmod -R ug+rwx /opt/hastebin
 
-RUN ls -al ${PB_FOLDER}
-
+# imposta volume
 VOLUME ["${PB_FOLDER}"]
 
-RUN ls -al ${PB_FOLDER}
-
+# utente
 USER 1001
+
+# porta (vedi configurazione in )
 EXPOSE 7777
+
+# avvio
 CMD ["npm", "start"]
