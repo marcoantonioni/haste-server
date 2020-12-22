@@ -20,8 +20,8 @@ RUN npm install
 # ownership utnte non-root
 RUN chown -R 1001:0 /opt/hastebin && chmod -R ug+rwx /opt/hastebin
 
-# imposta volume
-VOLUME ["${PB_FOLDER}"]
+# NON imposta volume per versione Openshift
+# VOLUME ["${PB_FOLDER}"]
 
 # utente
 USER 1001
