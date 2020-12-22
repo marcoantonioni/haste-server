@@ -1,5 +1,11 @@
 # Openshift version
-FROM node:alpine
+
+# accesso a registry docker.io/library
+# FROM node:alpine
+
+# accesso a IS in NS, eseguire podman push da locale a NS progetto
+# es: sudo podman push default-route-openshift-image-registry.apps.qb-testpaks.cp.fyre.ibm.com/test-haste-server/node:marco
+FROM node:marco
 MAINTAINER Marco Antonioni <antonioni.marco@gmail.com>
 
 ENV PB_FOLDER=/opt/hastebin
