@@ -26,8 +26,8 @@ VOLUME ["${PB_FOLDER}"]
 # utente
 USER 1001
 
-# porta (vedi configurazione in )
-EXPOSE 7777
+# porta (vedi configurazione in 'config.js')
+EXPOSE 8080
 
 # avvio
 CMD ["npm", "start"]
